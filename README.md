@@ -46,10 +46,7 @@ The following image is an example screenshot of what you should produce:
 Perform the following tasks:
 
  1) Plot the tectonic plates dataset on the map in addition to the earthquakes.
-
  2) Add other base maps to choose from.
-
  3) Put each dataset into separate overlays that can be turned on and off independently.
-
  4) Add layer controls to your map.
 
