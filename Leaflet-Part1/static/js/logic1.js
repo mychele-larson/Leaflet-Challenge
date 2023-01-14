@@ -11,91 +11,19 @@ L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
 }).addTo(myMap); 
 
 // Create link to get geoJSON data
-var link = 'https://earthquake.usgs.gov/fdsnws/event/1/[application.json[?format=geojson]]';
+var (url) = 'https://earthquake.usgs.gov/earthquakes/feed/v1.0/summary/4.5_day.geojson';
 
-{
-    "type": "Feature",
-        "geometry": {
-        "type": "Point",
-            "coordinates": [125.6, 10.1]
-    },
-    "properties": {
-        "name": "Dinagat Islands"
+d3.json(url).then(function (data) {
+     console.log(data);
+
+    for (var i = 0; i < data.length; i++) {
+        var location = data[i].location;
+
+        if (location) {
+            L.marker([location.coordinates[0], location.coordinates[1]]).addTo(myMap);
+        }
     }
-}
-{
-    type: "FeatureCollection",
-        metadata: {
-        generated: Long Integer,
-            url: String,
-                title: String,
-                    api: String,
-                        count: Integer,
-                            status: Integer
-    },
-    bbox: [
-        minimum longitude,
-        minimum latitude,
-        minimum depth,
-        maximum longitude,
-        maximum latitude,
-        maximum depth
-    ],
-        features: [
-            {
-                type: "Feature",
-                properties: {
-                    mag: Decimal,
-                    place: String,
-                    time: Long Integer,
-                    updated: Long Integer,
-                    tz: Integer,
-                    url: String,
-                    detail: String,
-                    felt: Integer,
-                    cdi: Decimal,
-                    mmi: Decimal,
-                    alert: String,
-                    status: String,
-                    tsunami: Integer,
-                    sig: Integer,
-                    net: String,
-                    code: String,
-                    ids: String,
-                    sources: String,
-                    types: String,
-                    nst: Integer,
-                    dmin: Decimal,
-                    rms: Decimal,
-                    gap: Decimal,
-                    magType: String,
-                    type: String
-                },
-                geometry: {
-                    type: "Point",
-                    coordinates: [
-                        longitude,
-                        latitude,
-                        depth
-                    ]
-                },
-                id: String
-            },
-    …
-        ]
-}
-
-// d3.json(link).then(function (data) {
-//     console.log(data);
-
-//     for (var i = 0; i < data.length; i++) {
-//         var location = data[i].location;
-
-//         if (location) {
-//             L.marker([location.coordinates[0], location.coordinates[1]]).addTo(myMap);
-//         }
-//     }
-// });
+});
 
 
 // function createFeatures(data) {
