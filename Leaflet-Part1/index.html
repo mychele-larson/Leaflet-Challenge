@@ -1,34 +1,37 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>GeoJSON - PART 1</title>
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Leaflet Step-1</title>
 
-<!-- Leaflet CSS -->
-    <link rel="stylesheet" href="http://cdn.leafletjs.com/leaflet-0.7.3/leaflet.css" />
+    <!-- Leaflet CSS -->
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.6.0/dist/leaflet.css"
+        integrity="sha512-xwE/Az9zrjBIphAcBb3F6JVqxf46+CDLwfLMHloNu6KEQCAWi6HcDUbeOfBIptF7tcCzusKFjFw2yuvEpDL9wQ=="
+        crossorigin="" />
 
-<!--D3 JavaScript -->
-    <script src="https://d3js.org/d3.v5.min.js"></script>
-<!--    <script src="https://unpkg.com/topojson@3"></script>-->
-    
-<!-- ICONS -->
-    <i class="fa fa-exclamation-circle" aria-hidden="true"></i>
-    
-<!-- My CSS -->
+    <!-- Our CSS file -->
     <link rel="stylesheet" type="text/css" href="static/css/stylepart1.css">
+
 </head>
 
 <body>
-<!-- The div with my map -->
-    <div id="mapid" style = "width:900px; height:580px;"></div>
 
-<!-- Leaflet JavaScript code -->
-    <script src="https://unpkg.com/leaflet@1.8.0/dist/leaflet.js"></script>
+    <!-- The div that holds the map -->
+    <div id="mapid"></div>
 
-<!--JavaScript file -->
-    <script type = 'text/javascript' src ="static/js/logic1.js"></script>
+    <!-- Leaflet JS -->
+    <script src="https://unpkg.com/leaflet@1.6.0/dist/leaflet.js"
+        integrity="sha512-gZwIG9x3wUXg2hdXF6+rVkLF/0Vi9U8D2Ntg4Ga5I5BZpVkVxlJWbSQtXPSiUTtC0TjtGOmxa1AJPuV0CPthew=="
+        crossorigin=""></script>
+
+    <!-- D3 JavaScript -->
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/d3/4.2.3/d3.min.js"></script>
+
+    <!-- Our JavaScript file -->
+    <script type="text/javascript" src="static/js/logic1.js"></script>
 </body>
 
 </html>
