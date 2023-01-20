@@ -17,8 +17,13 @@ function createMaps(earthquake) {
         attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
     }).addTo(myMap);
 
-    // Iterate through the earthquake data and create markers for each one
-    earthquake.forEach(function (quake) {
+        function markerSize(magnitude) {
+            return magnitude * 20000;
+        }      
+    }
+
+// Iterate through the earthquake data and create markers for each one
+earthquake.forEach(function (quake) {
         L.circle([quake.geometry.coordinates[1], quake.geometry.coordinates[0]], {
             fillOpacity: 0.75,
             color: "white",
