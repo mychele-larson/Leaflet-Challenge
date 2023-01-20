@@ -1,27 +1,23 @@
-/* Remove the default margin and padding from the body. */
-body {
-    padding: 0;
-    margin: 0;
+/* Set the background color of the map container */
+#mapid {
+    background-color: #f2f2f2;
 }
 
-/* Set map, body, and html to 100% of the screen size. */
-#map,
-body,
-html {
-    height: 100%;
+/* Style the markers on the map */
+.leaflet-marker-icon {
+    background-color: purple;
+    border-radius: 50%;
 }
 
-/* Legend specific */
-.legend {
-    padding: 6px 8px;
-    background: white;
-    background: rgba(255, 255, 255, 0.8);
+/* Style the popups that appear when a marker is clicked */
+.leaflet-popup {
+    background-color: white;
+    color: black;
+    padding: 10px;
 }
 
-.legend i {
-    width: 18px;
-    height: 18px;
-    float: left;
-    margin: 0 8px 0 0;
-    opacity: 0.7;
+/* Style the text inside the popups */
+.leaflet-popup h3 {
+    margin-top: 0;
+    font-weight: bold;
 }
