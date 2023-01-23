@@ -49,7 +49,7 @@ function createFeatures(earthquakeData) {
                 fillOpacity: 0.5,
                 color: "black",
                 stroke: true,
-                weight: 0.5
+                weight: 1
             }
             return L.circle(latlng, markers);
         }
@@ -82,7 +82,7 @@ function createMap(earthquakes) {
     };
 
     // Create our map, giving it the streetmap and earthquakes layers to display on load.
-    let myMap = L.map("map", {
+    var myMap = L.map("map", {
         center: [41, 35],
         zoom: 3,
         layers: [street, earthquakes]
@@ -95,18 +95,22 @@ function createMap(earthquakes) {
         collapsed: false
     }).addTo(myMap);
 
-}
-// Add legend
+    // Create legend 
     var legend = L.control({ position: "bottomright" });
-    legend.onAdd = function () {
-        var div = L.DomUtil.create("div", "info legend"),
-            depth = [-10, 10, 30, 50, 70, 90];
-        div.innerHTML += "<h3 style='text-align: center'>Depth</h3>"
-        for (var i = 0; i < depth.length; i++) {
-            div.innerHTML +=
-                '<i style="background:' + mapColor(depth[i] + 1) + '"></i> ' +
-                depth[i] + (depth[i + 1] ? '&ndash;' + depth[i + 1] + '<br>' : '+');
-        }
-        return div;
+
+    legend.onAdd = function (myMap) {
+        var div = L.DomUtil.create("div", "legend");
+        div.innerHTML += "<h4 style='text-align: center'>Legend by Depth (km)</h4>";
+        div.innerHTML += '<i style="background: #64B5F6"></i><span>10 km or less</span><br>';
+        div.innerHTML += '<i style="background: #43A047"></i><span>30 km or less</span><br>';
+        div.innerHTML += '<i style="background: #FFF176"></i><span>50 km or less</span><br>';
+        div.innerHTML += '<i style="background: #FB8C00"></i><span>70 km or less</span><br>';
+        div.innerHTML += '<i style="background: #FF3300"></i><span>90 km or less</span><br>';
+        div.innerHTML += '<i style="background: #B71C1C"></i><span>More than 90 km</span><br>';
+            return div;
     };
+
     legend.addTo(myMap);
+}
+   
+  
