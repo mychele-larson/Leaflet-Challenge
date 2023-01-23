@@ -12,7 +12,7 @@ The United States Geological Survey, or USGS for short, is responsible for provi
 The USGS is interested in building a new set of tools that will allow them to visualize their earthquake data. They collect a massive amount of data from all over the world each day, but they lack a meaningful way of displaying it. In this challenge, you have been tasked with developing a way to visualize USGS data that will allow them to better educate the public and other government organizations (and hopefully secure more funding) on issues facing our planet.
 
 
-![image](https://user-images.githubusercontent.com/110074895/211966871-5129582c-d23f-4495-bc8c-3da0efacad5a.png)
+![image](https://user-images.githubusercontent.com/110074895/214098881-26c5a0f0-b75c-48e5-a758-2183acbbb36b.png)
 
 ### Instructions:
 
@@ -32,3 +32,6 @@ Import and visualize the data by doing the following:
 4) Create a legend that will provide context for your map data.
 
 5) Your visualization should look something like the preceding map.
+
+![image](https://user-images.githubusercontent.com/110074895/214099054-43a229e9-a9de-4d25-94ae-485236f23aea.png)
+
