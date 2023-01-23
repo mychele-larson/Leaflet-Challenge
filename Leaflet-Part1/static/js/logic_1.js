@@ -15,7 +15,7 @@ d3.json(url).then(function (data) {
 
 // Function to determine marker size
 function markerSize(magnitude) {
-    return magnitude * 2000;
+    return magnitude * 100000;
 };
 
 // Function to determine marker color by depth
@@ -82,7 +82,7 @@ function createMap(earthquakes) {
     };
 
     // Create our map, giving it the streetmap and earthquakes layers to display on load.
-    var myMap = L.map("map", {
+    let myMap = L.map("map", {
         center: [41, 35],
         zoom: 3,
         layers: [street, earthquakes]
@@ -96,29 +96,17 @@ function createMap(earthquakes) {
     }).addTo(myMap);
 
 }
-
-    let legend = L.control({ position: 'bottomright' });
-        legend.onAdd = function () {
-    div = L.DomUtil.create('div', 'info legend'),
-        depth = [-10, 10, 30, 50, 70, 90];
-    labels = [];
-    legendHead = "<h3 style='text-align: center'>Earthquake Depth</h3>"
-
-    div.innerHTML = legendHead
-
-        for (let i = 0; i < depth.length; i++) {
-            labels.push('<ul style="background-color:' + createColor(depth[i] + 1) + '"> <span>' + depth[i] +
-                (depth[i + 1] ? '&ndash;' + depth[i + 1] + '' : '+') + '</span></ul>');
-    }
-
-    div.innerHTML += "<ul>" + labels.join("") + "</ul>";
-
-    return div;
-
-};
-legend.addTo(myMap);
-
-
-
-
-
+// Add legend
+    var legend = L.control({ position: "bottomright" });
+    legend.onAdd = function () {
+        var div = L.DomUtil.create("div", "info legend"),
+            depth = [-10, 10, 30, 50, 70, 90];
+        div.innerHTML += "<h3 style='text-align: center'>Depth</h3>"
+        for (var i = 0; i < depth.length; i++) {
+            div.innerHTML +=
+                '<i style="background:' + mapColor(depth[i] + 1) + '"></i> ' +
+                depth[i] + (depth[i + 1] ? '&ndash;' + depth[i + 1] + '<br>' : '+');
+        }
+        return div;
+    };
+    legend.addTo(myMap);

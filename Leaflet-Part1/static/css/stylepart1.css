@@ -1,17 +1,3 @@
-body {
-    padding: 0;
-    margin: 0;
-}
-
-#map,
-body,
-html {
-    height: 100%;
-}
-
-h1 {
-    text-align: center;
-}
 /* Remove the default margin and padding from the body. */
 body {
     padding: 0;
